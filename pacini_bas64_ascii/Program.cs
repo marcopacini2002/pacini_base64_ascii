@@ -23,12 +23,19 @@ namespace pacini_bas64_ascii
             }
 
             base64EncodedData = Convert.ToBase64String(plainTextBytes);
-            Console.WriteLine(base64EncodedData);
+            Console.WriteLine("la codifica in base 64 della parola"+plainText+"è"+base64EncodedData);
 
-           byte[] base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            byte[] base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
             plainText = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
             Console.WriteLine(plainText);
 
+            int value;
+            Console.WriteLine("Inserisci il numero di cui voi sapere la corrispondenza in ascii");
+            value = Convert.ToInt32(Console.ReadLine());
+            char c = Convert.ToChar(value);
+            string d = c.ToString();
+            Console.WriteLine($"Il valore {value} corrisponde a {d}");
+         
             Console.ReadLine();
         }
     }
